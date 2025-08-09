@@ -1,0 +1,6 @@
+{
+  "abi": [
+    {"type":"event","name":"EventCreated","inputs":[{"name":"eventId","type":"uint256","indexed":true},{"name":"organizer","type":"address","indexed":true}]},
+    {"type":"function","name":"getEvent","stateMutability":"view","inputs":[{"name":"eventId","type":"uint256"}],"outputs":[{"name":"startTime","type":"uint256"},{"name":"endTime","type":"uint256"},{"name":"status","type":"uint8"}]}
+  ]
+}

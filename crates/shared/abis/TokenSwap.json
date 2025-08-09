@@ -1,0 +1,6 @@
+{
+  "abi": [
+    {"type":"event","name":"Swap","inputs":[{"name":"user","type":"address","indexed":true},{"name":"tokenIn","type":"address","indexed":true},{"name":"tokenOut","type":"address","indexed":true},{"name":"amountIn","type":"uint256","indexed":false},{"name":"amountOut","type":"uint256","indexed":false}]},
+    {"type":"function","name":"getReserves","stateMutability":"view","inputs":[],"outputs":[{"name":"reserve0","type":"uint256"},{"name":"reserve1","type":"uint256"}]}
+  ]
+}

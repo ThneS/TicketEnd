@@ -1,0 +1,8 @@
+{
+  "abi": [
+    {"type":"event","name":"TicketMinted","inputs":[{"name":"eventId","type":"uint256","indexed":true},{"name":"tokenId","type":"uint256","indexed":true},{"name":"to","type":"address","indexed":true}]},
+    {"type":"event","name":"TicketTransferred","inputs":[{"name":"tokenId","type":"uint256","indexed":true},{"name":"from","type":"address","indexed":true},{"name":"to","type":"address","indexed":true}]},
+    {"type":"function","name":"ownerOf","stateMutability":"view","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"owner","type":"address"}]},
+    {"type":"function","name":"eventIdOf","stateMutability":"view","inputs":[{"name":"tokenId","type":"uint256"}],"outputs":[{"name":"eventId","type":"uint256"}]}
+  ]
+}

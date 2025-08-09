@@ -1,0 +1,7 @@
+{
+  "abi": [
+    {"type":"event","name":"ListingCreated","inputs":[{"name":"listingId","type":"uint256","indexed":true},{"name":"ticketId","type":"uint256","indexed":true},{"name":"seller","type":"address","indexed":true}]},
+    {"type":"event","name":"TradeExecuted","inputs":[{"name":"listingId","type":"uint256","indexed":true},{"name":"buyer","type":"address","indexed":true},{"name":"price","type":"uint256","indexed":false}]},
+    {"type":"function","name":"getListing","stateMutability":"view","inputs":[{"name":"listingId","type":"uint256"}],"outputs":[{"name":"ticketId","type":"uint256"},{"name":"price","type":"uint256"},{"name":"status","type":"uint8"}]}
+  ]
+}
