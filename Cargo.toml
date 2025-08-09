@@ -1,0 +1,58 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/shared",
+  "crates/api",
+  "crates/indexer",
+  "crates/verifier"
+]
+
+[workspace.package]
+edition = "2021"
+authors = ["OnlineTicket Team"]
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+axum = { version = "0.7", features = ["macros", "json"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+serde_with = "3"
+utoipa = { version = "4", features = ["axum"] }
+utoipa-swagger-ui = { version = "7", features = ["axum"] }
+jsonwebtoken = "9"
+argon2 = "0.5"
+redis = { version = "0.25", features = ["tokio-comp", "connection-manager"] }
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "uuid", "json", "chrono", "migrate"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+figment = { version = "0.10", features = ["env", "toml"] }
+dotenvy = "0.15"
+async-trait = "0.1"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+# Alloy (选取核心 crates)
+alloy = { version = "0.3", features = ["providers", "rpc", "ws", "transport-http", "contract", "sol-types"] }
+ futures = "0.3"
+
+# Observability
+metrics = "0.23"
+metrics-exporter-prometheus = "0.15"
+
+# Dev
+serde_qs = "0.13"
+insta = { version = "1", features = ["yaml"] }
+
+[workspace.metadata.sqlx]
+database = "PostgreSQL"
+# offline 构建可通过: cargo sqlx prepare --workspace -- --all-features
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+strip = true
+panic = "abort"
